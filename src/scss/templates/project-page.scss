@@ -1,0 +1,23 @@
+.project-page {
+  iframe {
+    @include xs {
+      min-height: 200px;
+    }
+
+    max-width: 600px !important;
+    width: 100%;
+    height: 400px;
+  }
+
+  p {
+    padding: 12px 0;
+  }
+
+  &__back {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

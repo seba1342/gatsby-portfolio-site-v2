@@ -1,0 +1,15 @@
+.index-page {
+  //
+
+  &__content {
+    p {
+      padding: 12px 0;
+    }
+  }
+
+  //
+
+  .marquee-banner {
+    transition: $slow-transition transform;
+  }
+}

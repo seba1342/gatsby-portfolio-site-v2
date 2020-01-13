@@ -1,0 +1,9 @@
+backend:
+  name: git-gateway
+  repo: seba1342/gatsby-portfolio-site-v2
+  branch: master
+
+site_url: https://seb.bailouni.com
+
+media_folder: static/uploads
+public_folder: uploads

@@ -1,0 +1,13 @@
+.projects-page {
+  &__link {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+
+      .projects-page__title {
+        text-decoration: underline;
+      }
+    }
+  }
+}

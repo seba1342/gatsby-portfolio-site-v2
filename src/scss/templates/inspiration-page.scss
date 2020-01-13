@@ -1,0 +1,39 @@
+.inspiration-page {
+  a {
+    text-decoration: none;
+  }
+
+  &__item {
+    text-decoration: none;
+
+    &--elevate {
+      transition: $default-transition all;
+
+      transform: translate3d(0, 0, 0);
+    }
+
+    &__image {
+      transition: $default-transition all;
+
+      -webkit-box-shadow: 0px 0px 0px 0px rgba(34, 34, 34, 1);
+      -moz-box-shadow: 0px 0px 0px 0px rgba(34, 34, 34, 1);
+      box-shadow: 0px 0px 0px 0px rgba(34, 34, 34, 1);
+    }
+
+    &:hover {
+      .inspiration-page__item--elevate {
+        transform: translate3d(0, -4px, 0);
+      }
+
+      .inspiration-page__item__url {
+        text-decoration: underline;
+      }
+
+      .inspiration-page__item__image {
+        -webkit-box-shadow: 0px 2px 7px 0px rgba(34, 34, 34, 1);
+        -moz-box-shadow: 0px 2px 7px 0px rgba(34, 34, 34, 1);
+        box-shadow: 0px 2px 7px 0px rgba(34, 34, 34, 1);
+      }
+    }
+  }
+}

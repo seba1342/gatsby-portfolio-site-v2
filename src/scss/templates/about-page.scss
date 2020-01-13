@@ -1,0 +1,147 @@
+.about-page {
+  @include xs {
+    padding-bottom: 56px;
+  }
+
+  padding: 96px 0 0;
+
+  &__clients {
+    @include xs {
+      margin-top: 0;
+    }
+
+    margin-top: 60px;
+
+    &--left {
+      @include xs {
+        margin-top: 24px;
+      }
+    }
+
+    &--right {
+      @include sm {
+        margin-top: 0;
+      }
+    }
+
+    &__item {
+      height: 48px;
+      border-top: 1px solid theme("colors.white");
+
+      //
+
+      .client-title {
+        @include xs {
+          white-space: nowrap;
+        }
+
+        line-height: 48px;
+      }
+
+      //
+
+      img,
+      svg {
+        width: 20px;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &__form {
+    margin-top: 24px;
+  }
+
+  &__intro {
+    padding-bottom: 96px;
+
+    p:last-child {
+      margin-top: 12px;
+    }
+  }
+
+  &__processes {
+    @include xs {
+      display: none;
+    }
+
+    margin-top: 60px;
+
+    &__item {
+      @include sm {
+        height: auto;
+      }
+
+      height: 48px;
+      border-top: 1px solid theme("colors.white");
+
+      //
+
+      .process-data {
+        @include sm {
+          height: auto;
+          min-height: 36px;
+          line-height: 36px;
+          padding: 8px 0;
+        }
+
+        line-height: 48px;
+
+        &--code {
+          width: calc(25% - 4px);
+        }
+
+        &--title {
+          width: calc(75% - 8px - 24px);
+        }
+
+        &--checkbox {
+          @include sm {
+            min-height: 0;
+            margin-top: 12px;
+          }
+
+          width: 24px;
+          height: 24px;
+          margin-top: 11px;
+          border: 1px solid theme("colors.white");
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  &__section {
+    @include xs {
+      margin-top: 64px;
+    }
+
+    margin-top: 96px;
+    border-top: 1px solid theme("colors.white");
+
+    //
+
+    &--contact {
+      @include xs {
+        border: none;
+      }
+    }
+
+    //
+
+    &__heading,
+    &__text {
+      @include xs {
+        margin-top: 18px;
+      }
+
+      margin-top: 24px;
+    }
+  }
+
+  //
+
+  .form {
+    margin-top: 24px;
+  }
+}

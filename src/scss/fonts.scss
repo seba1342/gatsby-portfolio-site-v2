@@ -1,0 +1,176 @@
+// mixins
+
+@mixin f1 {
+  @include sm {
+    font-size: 88px;
+    line-height: 84px;
+  }
+
+  @include xs {
+    font-size: 56px;
+    line-height: 56px;
+  }
+
+  font-family: "avenir", "helvetica", "sans-serif";
+
+  font-size: 100px;
+  line-height: 96px;
+}
+
+.f1 {
+  @include f1;
+}
+
+@mixin f1-5 {
+  @include md {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  font-family: "avenir", "helvetica", "sans-serif";
+
+  font-size: 66px;
+  line-height: 72px;
+}
+
+.f1-5 {
+  @include f1-5;
+}
+
+//
+
+@mixin f2 {
+  @include md {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  @include sm {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  @include xs {
+    font-size: 26px;
+    line-height: 30px;
+  }
+
+  font-family: "avenir", "helvetica", "sans-serif";
+
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.f2 {
+  @include f2;
+}
+
+//
+
+@mixin f3 {
+  @include xs {
+    font-size: 22px;
+    line-height: 24px;
+  }
+
+  font-size: 28px;
+  line-height: 32px;
+  font-family: "avenir", "helvetica", "sans-serif";
+}
+
+.f3 {
+  @include f3;
+}
+
+@mixin f4 {
+  @include sm {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  @include xs {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  font-family: "avenir", "helvetica", "sans-serif";
+
+  font-size: 26px;
+  line-height: 28px;
+}
+
+.f4 {
+  @include f4;
+}
+
+//
+
+@mixin b1 {
+  @include sm {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  @include xs {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  font-family: "avenir", "helvetica", "sans-serif";
+
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.b1 {
+  @include b1;
+}
+
+//
+
+@mixin b2 {
+  @include sm {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  @include xs {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  font-family: "avenir", "helvetica", "sans-serif";
+
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.b2 {
+  @include b2;
+}
+
+//
+
+@mixin b3 {
+  font-family: "avenir", "helvetica", "sans-serif";
+
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.b3 {
+  @include b3;
+}
+
+//
+
+@mixin caption {
+  font-family: "avenir", "helvetica", "sans-serif";
+
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.caption {
+  @include caption;
+}
