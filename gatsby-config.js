@@ -106,6 +106,12 @@ module.exports = {
     `gatsby-plugin-root-import`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-140345451-1`
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/static/uploads`,

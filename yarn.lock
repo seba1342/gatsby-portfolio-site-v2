@@ -784,6 +784,13 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@babel/runtime@^7.7.6":
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.8.0.tgz#8c81711517c56b3d00c6de706b0fb13dc3531549"
+  integrity sha512-Z7ti+HB0puCcLmFE3x90kzaVgbx6TRrYIReaygW6EkBEnJh1ajS4/inhF7CypzWeDV3NFl1AfWj0eMtdihojxw==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
 "@babel/template@^7.1.0", "@babel/template@^7.4.4", "@babel/template@^7.6.0":
   version "7.6.0"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.6.0.tgz#7f0159c7f5012230dad64cca42ec9bdb5c9536e6"
@@ -6011,6 +6018,13 @@ gatsby-plugin-facebook-pixel@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-facebook-pixel/-/gatsby-plugin-facebook-pixel-1.0.3.tgz#d3cab36fa61803e9d412f36847775d383325dfdf"
   integrity sha512-IM4e+5FkpLUCV/69tU+GFXVAs0EJXBfM/BARO/6SaMqalLfj1fj4ZXUyC8kHy3RiTMuw+y8g2mdkBMZqj7RyWQ==
+
+gatsby-plugin-google-analytics@^2.1.32:
+  version "2.1.32"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.1.32.tgz#36a948126ffc48d38f5d96e868299174aae8e535"
+  integrity sha512-95KqOwQ1eMra26guFA7xGY3uqiAVGo9bguE1Gro2Eoy6Vod4r/WU4uEDiUbJctM0nhVgzNcmRZVxQtvVPTjngg==
+  dependencies:
+    "@babel/runtime" "^7.7.6"
 
 gatsby-plugin-google-tagmanager@^2.1.17:
   version "2.1.17"
