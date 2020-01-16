@@ -3,6 +3,18 @@
     text-decoration: none;
   }
 
+  &__loading {
+    &:after {
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: bottom;
+      -webkit-animation: ellipsis steps(4, end) 900ms infinite;
+      animation: ellipsis steps(4, end) 900ms infinite;
+      content: "\2026";
+      width: 0px;
+    }
+  }
+
   &__item {
     text-decoration: none;
 
@@ -35,5 +47,20 @@
         box-shadow: 0px 2px 7px 0px rgba(34, 34, 34, 1);
       }
     }
+  }
+}
+
+//
+// Keyframes
+
+@keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1.25em;
   }
 }

@@ -17,11 +17,14 @@ class InspirationPageComponent extends Component {
 
   componentDidMount() {
     axios
-      .get(`https://api.are.na/v2/channels/the-interwebz`)
+      .get(`https://api.are.na/v2/channels/the-interwebz?per=100`)
       .then(response => {
         // handle success
         console.log(response.data.contents);
-        this.setState({ arenaData: response.data.contents, loading: false });
+        this.setState({
+          arenaData: response.data.contents.reverse(),
+          loading: false
+        });
       })
       .catch(error => {
         // handle error
@@ -48,7 +51,9 @@ class InspirationPageComponent extends Component {
                 const itemKey = index;
 
                 return (
+                  item.base_class === `Block` &&
                   item.title &&
+                  item.image &&
                   item.image.display.url &&
                   item.source.url && (
                     <a
@@ -67,7 +72,7 @@ class InspirationPageComponent extends Component {
                           {item.title}
                         </h1>
 
-                        <p className="inspiration-page__item__url b2 text-center xs:relative pb-4">
+                        <p className="inspiration-page__item__url break-words b2 text-center xs:relative pb-4">
                           {item.source.url}
                         </p>
 
@@ -82,7 +87,7 @@ class InspirationPageComponent extends Component {
                 );
               })
             ) : (
-              <p>Fetching inspiration...</p>
+              <p className="inspiration-page__loading">Fetching inspiration</p>
             )}
           </section>
         </Layout>
