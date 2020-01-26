@@ -16,7 +16,7 @@ export default function Layout({ children, className }) {
               class: `m-auto ${
                 appContext.darkMode
                   ? `bg-dark-grey text-antique-white`
-                  : `bg-antique-white text-dark-grey`
+                  : `bg-antique-white text-dark-grey layout__background-animation`
               }`
             }}
           />

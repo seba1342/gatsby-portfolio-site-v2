@@ -90,4 +90,37 @@ button {
 
   max-width: 600px;
   padding: 18px;
+
+  &__background-animation {
+    animation: background_cycle 25s infinite;
+  }
+}
+
+// Keyframes
+
+@keyframes background_cycle {
+  0% {
+    background: #e9cdcd;
+  }
+  12.5% {
+    background: #faebd7;
+  }
+  25% {
+    background: #e2e9cd;
+  }
+  37.5% {
+    background: #cde9d8;
+  }
+  50% {
+    background: #cde2e9;
+  }
+  65.5% {
+    background: #cecde9;
+  }
+  75% {
+    background: #e9cde3;
+  }
+  100% {
+    background: #e9cdcd;
+  }
 }
