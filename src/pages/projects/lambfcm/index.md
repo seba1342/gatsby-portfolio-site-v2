@@ -3,7 +3,7 @@ path: "/projects/lambfcm"
 date: "2019-11-29"
 title: "<3 + $ Black Friday/Cyber Monday Store"
 tags: ["js", "netlify", "react", "tailwindcss", "gatsby", "shopify"]
-excerpt: "A eCommerce store for people to buy Love + Money's services"
+excerpt: "An eCommerce store for people to buy Love + Money's services"
 featuredImage: "/lambfcm.png"
 projectLink: "https://shop.loveandmoney.agency"
 templateKey: project-page

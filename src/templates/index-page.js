@@ -33,7 +33,18 @@ class IndexPageComponent extends Component {
               Melbourne.
             </p>
             <p className="animation-appear" style={{ animationDelay: `300ms` }}>
-              I currently work as a Junior Developer for&nbsp;
+              I currently work as a Developer for&nbsp;
+              <a
+                href="https://www.ferocia.com.au/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ferocia
+              </a>
+              &nbsp;where I work on Bendigo Bank&apos;s online banking platform.
+            </p>
+            <p className="animation-appear" style={{ animationDelay: `300ms` }}>
+              I have also worked as a Junior Developer for&nbsp;
               <a
                 href="https://loveandmoney.agency"
                 target="_blank"
@@ -41,7 +52,7 @@ class IndexPageComponent extends Component {
               >
                 Love + Money Agency
               </a>
-              &nbsp;where I add a little bit to the internet everyday.
+              &nbsp;where I added a little bit to the internet everyday.
             </p>
             <p className="animation-appear" style={{ animationDelay: `400ms` }}>
               I also recently completed a double degree in IT and Design at
