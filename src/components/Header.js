@@ -1,16 +1,12 @@
 /* eslint-disable react/prop-types */
 
-import React, { useState } from "react";
-import { StaticQuery, graphql, Link } from "gatsby";
-
+import React, { useContext, useState } from "react";
+import { Link } from "gatsby";
 import { AppContext } from "~context/AppContext";
 
-// import DarkModeToggle from "./DarkModeToggle/DarkModeToggle";
-
-const HeaderComponent = ({ appContext, data }) => {
+const Header = () => {
+  const appContext = useContext(AppContext);
   const [menuActive, setMenuActive] = useState(false);
-
-  const { title } = data.site.siteMetadata;
 
   return (
     <>
@@ -20,7 +16,7 @@ const HeaderComponent = ({ appContext, data }) => {
             className="f3 font-bold animation-appear--from-top"
             style={{ animationDelay: `50ms` }}
           >
-            {title}
+            Seb Bailouni
           </h2>
         </Link>
 
@@ -150,30 +146,6 @@ const HeaderComponent = ({ appContext, data }) => {
         </div>
       )}
     </>
-  );
-};
-
-const Header = () => {
-  return (
-    <AppContext.Consumer>
-      {appContext => (
-        <StaticQuery
-          query={graphql`
-            query {
-              site {
-                siteMetadata {
-                  title
-                  description
-                }
-              }
-            }
-          `}
-          render={data => (
-            <HeaderComponent appContext={appContext} data={data} />
-          )}
-        />
-      )}
-    </AppContext.Consumer>
   );
 };
 

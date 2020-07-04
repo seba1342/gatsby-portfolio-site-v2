@@ -9,14 +9,15 @@ import "lazysizes";
 
 import React from "react";
 import AppProvider from "~context/AppContext";
-
+import Header from "~components/Header";
 import "~scss/index.scss";
 
 export const wrapRootElement = ({ element }) => {
   return (
-    <>
-      <AppProvider>{element}</AppProvider>
-    </>
+    <AppProvider>
+      <Header />
+      {element}
+    </AppProvider>
   );
 };
 
@@ -29,7 +30,7 @@ if (typeof window === `undefined`) {
     navigator: {},
     removeEventListener: () => {},
     requestAnimationFrame: () => {},
-    server: true
+    server: true,
   };
 }
 

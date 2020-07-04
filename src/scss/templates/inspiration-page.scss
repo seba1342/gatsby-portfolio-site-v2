@@ -27,9 +27,8 @@
     &__image {
       transition: $default-transition all;
 
-      -webkit-box-shadow: 0px 0px 0px 0px rgba(34, 34, 34, 1);
-      -moz-box-shadow: 0px 0px 0px 0px rgba(34, 34, 34, 1);
-      box-shadow: 0px 0px 0px 0px rgba(34, 34, 34, 1);
+      border-radius: 5px;
+      box-shadow: 0px 0px 0px 0px rgba(34, 34, 34, 0.5);
     }
 
     &:hover {
@@ -42,9 +41,7 @@
       }
 
       .inspiration-page__item__image {
-        -webkit-box-shadow: 0px 2px 7px 0px rgba(34, 34, 34, 1);
-        -moz-box-shadow: 0px 2px 7px 0px rgba(34, 34, 34, 1);
-        box-shadow: 0px 2px 7px 0px rgba(34, 34, 34, 1);
+        box-shadow: 0px 2px 10px 0px rgba(34, 34, 34, 0.5);
       }
     }
   }
@@ -54,12 +51,6 @@
 // Keyframes
 
 @keyframes ellipsis {
-  to {
-    width: 1.25em;
-  }
-}
-
-@-webkit-keyframes ellipsis {
   to {
     width: 1.25em;
   }

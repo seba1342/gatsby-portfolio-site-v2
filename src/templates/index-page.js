@@ -20,10 +20,10 @@ class IndexPageComponent extends Component {
       <>
         <SEO frontmatterTitle={this.props.frontmatter.title} />
 
-        <Layout className="index-page w-full relative m-auto m'b-16">
+        <Layout className="index-page w-full relative m-auto mb-16">
           <section className="index-page__content b1">
             <p className="animation-appear" style={{ animationDelay: `100ms` }}>
-              Hey&nbsp;
+              Hey{" "}
               <span role="img" aria-label="Sunglasses Emoji Face">
                 😎
               </span>
@@ -33,46 +33,53 @@ class IndexPageComponent extends Component {
               Melbourne.
             </p>
             <p className="animation-appear" style={{ animationDelay: `300ms` }}>
-              I currently work as a Developer for&nbsp;
+              I currently work as a Developer for{" "}
               <a
                 href="https://www.ferocia.com.au/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Ferocia
-              </a>
-              &nbsp;where I work on Bendigo Bank&apos;s online banking platform.
+              </a>{" "}
+              where I work on Bendigo Bank&apos;s online banking platform.
             </p>
             <p className="animation-appear" style={{ animationDelay: `300ms` }}>
-              I have also worked as a Junior Developer for&nbsp;
+              I have also worked as a Junior Developer for{" "}
               <a
                 href="https://loveandmoney.agency"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Love + Money Agency
-              </a>
-              &nbsp;where I added a little bit to the internet everyday.
+              </a>{" "}
+              where I added a little bit to the internet everyday.
             </p>
             <p className="animation-appear" style={{ animationDelay: `400ms` }}>
-              I also recently completed a double degree in IT and Design at
-              Monash University. I&apos;m inspired to solve problems with
-              others, play basketball and run.
+              I am inspired to solve problems and love the overlap between art
+              and science.
             </p>
             <p className="animation-appear" style={{ animationDelay: `500ms` }}>
-              In my free time I enjoy playing video/board games, listening to
-              podcasts, reading and binge watching cooking shows on Netflix.
+              In my free time I enjoy playing{" "}
+              <a
+                href="https://twitter.com/kartklips"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Mario Kart
+              </a>
+              , listening to podcasts, playing basketball and binge watching
+              cooking shows on Netflix.
             </p>
             <p className="animation-appear" style={{ animationDelay: `600ms` }}>
-              You can find me on&nbsp;
+              You can find me on{" "}
               <a
-                href="https://instagram.com/designbyseba"
+                href="https://instagram.com/sebastien.bailouni"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Instagram
               </a>
-              ,&nbsp;
+              ,{" "}
               <a
                 href="https://www.linkedin.com/in/sebastien-bailouni-956002123/"
                 target="_blank"
@@ -80,7 +87,15 @@ class IndexPageComponent extends Component {
               >
                 LinkedIn
               </a>
-              , and&nbsp;
+              ,{" "}
+              <a
+                href="https://www.twitter.com/seba1342"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Twitter
+              </a>
+              , and{" "}
               <a
                 href="https://www.strava.com/athletes/35219560"
                 target="_blank"
@@ -88,15 +103,15 @@ class IndexPageComponent extends Component {
               >
                 Strava
               </a>
-              , or reach me via&nbsp;
+              , or reach me via{" "}
               <a href="mailto:sbailouni@gmail.com">sbailouni@gmail.com</a>.
             </p>
             <p className="animation-appear" style={{ animationDelay: `700ms` }}>
-              Head to my&nbsp;
+              Head to my{" "}
               <Link to="/projects" className="link">
                 projects
-              </Link>
-              &nbsp;page to see some of my work.
+              </Link>{" "}
+              page to see some of my work.
             </p>
           </section>
         </Layout>
@@ -111,7 +126,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <AppContext.Consumer>
-      {appContext => (
+      {(appContext) => (
         <IndexPageComponent
           appContext={appContext}
           frontmatter={frontmatter}

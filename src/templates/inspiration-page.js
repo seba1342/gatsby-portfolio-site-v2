@@ -12,23 +12,22 @@ import { AppContext } from "~context/AppContext";
 class InspirationPageComponent extends Component {
   state = {
     arenaData: [],
-    loading: true
+    loading: true,
   };
 
   componentDidMount() {
     axios
       .get(`https://api.are.na/v2/channels/the-interwebz?per=100`)
-      .then(response => {
+      .then((response) => {
         // handle success
-        console.log(response.data.contents);
         this.setState({
           arenaData: response.data.contents.reverse(),
-          loading: false
+          loading: false,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         // handle error
-        console.log(error);
+        console.error(error);
       });
   }
 
@@ -72,15 +71,15 @@ class InspirationPageComponent extends Component {
                           {item.title}
                         </h1>
 
-                        <p className="inspiration-page__item__url break-words b2 text-center xs:relative pb-4">
-                          {item.source.url}
-                        </p>
-
                         <img
                           alt="arena post"
                           className="inspiration-page__item__image m-auto"
                           src={item.image.square.url}
                         />
+
+                        <p className="inspiration-page__item__url break-words b2 text-center xs:relative pt-4">
+                          {item.source.url}
+                        </p>
                       </div>
                     </a>
                   )
@@ -102,7 +101,7 @@ const InspirationPage = ({ data }) => {
 
   return (
     <AppContext.Consumer>
-      {appContext => (
+      {(appContext) => (
         <InspirationPageComponent
           appContext={appContext}
           frontmatter={frontmatter}
