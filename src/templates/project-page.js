@@ -23,9 +23,13 @@ class ProjectPageComponent extends Component {
 
         <Layout className="project-page relative w-full m-auto mb-16">
           <Link to="/projects" className="project-page__back">
-            <div className="animation-appear">
-              <span className="" role="img" aria-label="left arrow emoji">
-                ⬅️&nbsp;
+            <div className="back relative animation-appear">
+              <span
+                className="back-arrow absolute"
+                role="img"
+                aria-label="left arrow emoji"
+              >
+                ⬅&nbsp;
               </span>
               <span className="hover:underline">Back</span>
             </div>
@@ -84,7 +88,7 @@ const ProjectPage = ({ data }) => {
 
   return (
     <AppContext.Consumer>
-      {appContext => (
+      {(appContext) => (
         <ProjectPageComponent
           appContext={appContext}
           frontmatter={frontmatter}

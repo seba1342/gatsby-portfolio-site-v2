@@ -13,6 +13,10 @@ class ProjectsPageComponent extends Component {
 
   componentDidMount() {}
 
+  handleMouseOver = (event) => {
+    console.log(event);
+  };
+
   //
 
   render() {
@@ -40,6 +44,9 @@ class ProjectsPageComponent extends Component {
                 <div
                   key={projectKey}
                   className="projects-page__item my-4 xs:my-2 animation-appear"
+                  onFocus={this.handleMouseOver}
+                  onMouseOver={this.handleMouseOver}
+                  onMouseLeave={this.handleMouseLeave}
                   style={{ animationDelay: `${(index + 1) * 100 + 100}ms` }}
                 >
                   <Link className="projects-page__link" to={fields.slug}>
@@ -74,7 +81,7 @@ const ProjectsPage = ({ data }) => {
 
   return (
     <AppContext.Consumer>
-      {appContext => (
+      {(appContext) => (
         <ProjectsPageComponent
           appContext={appContext}
           edges={edges}
@@ -106,6 +113,17 @@ export const projectsPageQuery = graphql`
             excerpt
             path
             title
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 800, quality: 100) {
+                  src
+                  srcSet
+                  aspectRatio
+                  sizes
+                  base64
+                }
+              }
+            }
           }
         }
       }

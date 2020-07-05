@@ -20,4 +20,18 @@
       text-decoration: none;
     }
   }
+
+  .back {
+    &:hover {
+      .back-arrow {
+        transform: translateX(-30px);
+      }
+    }
+  }
+
+  .back-arrow {
+    transition: $default-transition transform;
+
+    transform: translateX(-25px);
+  }
 }
