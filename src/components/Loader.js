@@ -47,7 +47,11 @@ const loadingCircleTransition = {
   ease: `easeInOut`
 };
 
-export default function ThreeDotsWave() {
+const ThreeDotsWave = () => {
+  if (!motion) {
+    return null;
+  }
+
   return (
     <motion.div
       style={loadingContainer}
@@ -72,4 +76,6 @@ export default function ThreeDotsWave() {
       />
     </motion.div>
   );
-}
+};
+
+export default ThreeDotsWave;

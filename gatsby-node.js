@@ -11,16 +11,37 @@ const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const { fmImagesToRelative } = require(`gatsby-remark-relative-images`);
 
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    module: {
-      rules: [
-        {
-          test: /\.(obj|mtl)$/,
-          use: [`url-loader`]
+exports.onCreateWebpackConfig = ({ actions, loaders, stage }) => {
+  if (stage === `build-html`) {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /framer-motion/,
+            use: loaders.null()
+          },
+          {
+            test: /popmotion/,
+            use: loaders.null()
+          }
+        ]
+      },
+      resolve: {
+        alias: {
+          "~assets": path.resolve(__dirname, `src/assets`),
+          "~components": path.resolve(__dirname, `src/components`),
+          "~context": path.resolve(__dirname, `src/context`),
+          "~data": path.resolve(__dirname, `src/data`),
+          "~node_modules": path.resolve(__dirname, `node_modules`),
+          "~pages": path.resolve(__dirname, `src/pages`),
+          "~scss": path.resolve(__dirname, `src/scss`),
+          "~utils": path.resolve(__dirname, `src/utils`)
         }
-      ]
-    },
+      }
+    });
+  }
+
+  actions.setWebpackConfig({
     resolve: {
       alias: {
         "~assets": path.resolve(__dirname, `src/assets`),
