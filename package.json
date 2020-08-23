@@ -9,8 +9,7 @@
     "clean": "gatsby clean",
     "dev": "gatsby develop -H 0.0.0.0",
     "build": "run-p build:**",
-    "build:app": "gatsby build",
-    "build:lambda": "netlify-lambda build src/lambda"
+    "build:app": "gatsby build"
   },
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
