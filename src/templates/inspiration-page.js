@@ -1,118 +1,67 @@
 /* eslint-disable react/prop-types */
 
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import { graphql } from "gatsby";
 import axios from "axios";
 
+import InspirationItem from "~components/InspirationItem";
 import Layout from "~components/Layout";
+import Loader from "~components/Loader";
 import SEO from "~components/SEO";
 
-import { AppContext } from "~context/AppContext";
-
-class InspirationPageComponent extends Component {
-  state = {
-    arenaData: [],
-    loading: true,
-  };
-
-  componentDidMount() {
-    axios
-      .get(`https://api.are.na/v2/channels/the-interwebz?per=100`)
-      .then((response) => {
-        // handle success
-        this.setState({
-          arenaData: response.data.contents.reverse(),
-          loading: false,
-        });
-      })
-      .catch((error) => {
-        // handle error
-        console.error(error);
-      });
-  }
-
-  //
-
-  render() {
-    const { frontmatter } = this.props;
-    return (
-      <>
-        <SEO frontmatterTitle={frontmatter.title} />
-
-        <Layout className="inspiration-page relative m-auto">
-          <p className="">
-            Here are some websites and designs that inspire my work:
-          </p>
-
-          <section className="inspiration-page__items pb-16 flex flex-row flex-wrap items-end ">
-            {!this.state.loading ? (
-              this.state.arenaData.map((item, index) => {
-                const itemKey = index;
-
-                return (
-                  item.base_class === `Block` &&
-                  item.title &&
-                  item.image &&
-                  item.image.display.url &&
-                  item.source.url && (
-                    <a
-                      className="inspiration-page__item w-1/2 xs:w-full p-1 py-4 xs:py-6 animation-appear"
-                      key={itemKey}
-                      href={item.source.url}
-                      rel="noopener noreferrer"
-                      style={{ animationDelay: `${(index + 1) * 100 + 100}ms` }}
-                      target="_blank"
-                    >
-                      <div className="inspiration-page__item--elevate">
-                        <h1
-                          key={itemKey}
-                          className="inspiration-page__item__title b1 text-center xs:relative pb-4"
-                        >
-                          {item.title}
-                        </h1>
-
-                        <img
-                          alt="arena post"
-                          className="inspiration-page__item__image m-auto"
-                          src={item.image.square.url}
-                        />
-
-                        <p className="inspiration-page__item__url break-words b2 text-center xs:relative pt-4">
-                          {item.source.url}
-                        </p>
-                      </div>
-                    </a>
-                  )
-                );
-              })
-            ) : (
-              <p className="inspiration-page__loading">Fetching inspiration</p>
-            )}
-          </section>
-        </Layout>
-      </>
-    );
-  }
-}
-
-const InspirationPage = ({ data }) => {
-  const { siteMetadata: metadata } = data.site;
+export default function InspirationPageComponent({ data }) {
+  const [arenaData, setArenaData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { frontmatter } = data.markdownRemark;
 
-  return (
-    <AppContext.Consumer>
-      {(appContext) => (
-        <InspirationPageComponent
-          appContext={appContext}
-          frontmatter={frontmatter}
-          metadata={metadata}
-        />
-      )}
-    </AppContext.Consumer>
-  );
-};
+  useEffect(() => {
+    axios
+      .get(`https://api.are.na/v2/channels/the-interwebz?per=100`)
+      .then(response => {
+        setArenaData(response.data.contents.reverse());
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
 
-export default InspirationPage;
+  return (
+    <>
+      <SEO frontmatterTitle={frontmatter.title} />
+
+      <Layout className="inspiration-page relative m-auto flex flex-col items-center">
+        <p className="f3 xs:pb-4 pb-16 pt-4">
+          Here are some websites and designs that inspire my work:
+        </p>
+
+        <section className="inspiration-page__items mb-16 flex flex-row flex-wrap items-end ">
+          {loading ? (
+            <div className="flex">
+              <p className="b1 mr-1">Fetching inspiration</p>
+              <Loader />
+            </div>
+          ) : (
+            arenaData.map((item, index) => {
+              const itemKey = index;
+
+              return (
+                <InspirationItem
+                  baseClass={item.base_class}
+                  image={item.image}
+                  index={index}
+                  key={itemKey}
+                  title={item.title}
+                  url={item.source?.url}
+                />
+              );
+            })
+          )}
+        </section>
+      </Layout>
+    </>
+  );
+}
 
 export const InspirationPageQuery = graphql`
   query InspirationPage($id: String!) {

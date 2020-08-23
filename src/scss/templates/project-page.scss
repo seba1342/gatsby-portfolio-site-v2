@@ -1,4 +1,6 @@
 .project-page {
+  max-width: 600px;
+
   iframe {
     @include xs {
       min-height: 200px;

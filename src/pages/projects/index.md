@@ -1,6 +1,6 @@
 ---
 templateKey: projects-page
 title: Projects
-description: ""
+description: "A list of some projects I have worked on."
 keywords: ""
 ---
