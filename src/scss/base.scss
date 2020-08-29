@@ -7,21 +7,10 @@ html {
 }
 
 body {
-  transition: $default-transition background-color;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -ms-overflow-style: none;
   overflow-x: hidden;
-  background-color: theme("colors.white");
-  color: theme("colors.black");
-
-  //
-
-  &.dark {
-    background-color: theme("colors.black");
-    color: theme("colors.white");
-  }
 
   //
 
@@ -66,13 +55,6 @@ select {
   outline: none;
 }
 
-// // gatsby-image hack
-// picture {
-//   img {
-//     opacity: 1 !important;
-//   }
-// }
-
 button {
   background: transparent;
   border: none;
@@ -86,8 +68,6 @@ button {
 //
 
 .layout {
-  transition: $slow-transition background-color;
-
   padding: 18px;
 
   &__background-animation {

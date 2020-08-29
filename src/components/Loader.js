@@ -6,17 +6,15 @@ const loadingContainer = {
   height: `2rem`,
   display: `flex`,
   justifyContent: `space-around`,
-  alignItems: `center`,
-  paddingBottom: `.5rem`
+  alignItems: `center`
 };
 
 const loadingCircle = {
   display: `block`,
-  width: `0.3rem`,
-  height: `0.3rem`,
-  backgroundColor: `transparent`,
-  border: `.025rem solid black `,
-  borderRadius: `0.25rem`
+  width: `0.35rem`,
+  height: `0.35rem`,
+  backgroundColor: `black`,
+  borderRadius: `100%`
 };
 
 const loadingContainerVariants = {

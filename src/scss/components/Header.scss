@@ -73,17 +73,17 @@
   }
 
   &__links {
-    transition: $default-transition all;
+    // transition: $default-transition all;c
 
-    @include xs {
-      opacity: 0;
-      height: 0;
+    // @include xs {
+    //   opacity: 0;
+    //   height: 0;
 
-      &.menu-active {
-        height: 125px;
-        opacity: 1;
-      }
-    }
+    //   &.menu-active {
+    //     height: 125px;
+    //     opacity: 1;
+    //   }
+    // }
 
     display: flex;
   }

@@ -2,16 +2,25 @@
 
 import React, { useContext, useState } from "react";
 import { Link } from "gatsby";
+import { AnimatePresence, motion } from "framer-motion";
 import { AppContext } from "~context/AppContext";
 
 const Header = () => {
   const appContext = useContext(AppContext);
   const [menuActive, setMenuActive] = useState(false);
 
+  if (!motion || !AnimatePresence) {
+    return null;
+  }
+
   return (
     <>
       <header className="header flex flex-row xs:justify-between justify-center items-center p-4 b1">
-        <Link to="/" className="header__brand no-underline mx-4 xs:mx-0">
+        <Link
+          to="/"
+          className="header__brand no-underline mx-4 xs:mx-0"
+          onClick={() => setMenuActive(false)}
+        >
           <h2
             className="f3 font-bold animation-appear--from-top"
             style={{ animationDelay: `50ms` }}
@@ -100,50 +109,43 @@ const Header = () => {
       </header>
 
       {appContext.device === `mobile` && (
-        <div
-          className={`header__links flex flex-col justify-between f2 ${
-            menuActive ? `menu-active` : ``
-          }`}
-        >
-          <Link
-            to="/"
-            className="header__link mx-4"
-            activeClassName="header__link--active"
-          >
-            <div
-              className="animation-appear--from-top"
-              style={{ animationDelay: `100ms` }}
+        <AnimatePresence>
+          {menuActive && (
+            <motion.div
+              className="header__links flex flex-col justify-between f2"
+              animate={{ height: 125, opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.2 }}
             >
-              /home
-            </div>
-          </Link>
+              <Link
+                to="/"
+                className="header__link mx-4"
+                activeClassName="header__link--active"
+                onClick={() => setMenuActive(false)}
+              >
+                /home
+              </Link>
 
-          <Link
-            to="/projects"
-            className="header__link mx-4"
-            activeClassName="header__link--active"
-          >
-            <div
-              className="animation-appear--from-top"
-              style={{ animationDelay: `200ms` }}
-            >
-              /projects
-            </div>
-          </Link>
+              <Link
+                to="/projects"
+                className="header__link mx-4"
+                activeClassName="header__link--active"
+                onClick={() => setMenuActive(false)}
+              >
+                /projects
+              </Link>
 
-          <Link
-            to="/inspiration"
-            className="header__link mx-4"
-            activeClassName="header__link--active"
-          >
-            <div
-              className="animation-appear--from-top"
-              style={{ animationDelay: `200ms` }}
-            >
-              /inspo
-            </div>
-          </Link>
-        </div>
+              <Link
+                to="/inspiration"
+                className="header__link mx-4"
+                activeClassName="header__link--active"
+                onClick={() => setMenuActive(false)}
+              >
+                /inspo
+              </Link>
+            </motion.div>
+          )}
+        </AnimatePresence>
       )}
     </>
   );
