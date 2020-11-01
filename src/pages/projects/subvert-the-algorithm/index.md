@@ -5,7 +5,7 @@ title: "Subvert the Algorithm"
 tags: ["js", "netlify", "react", "gatsby", "design"]
 excerpt: "A project which aims to raise awareness about how algorithms curate all the content we consume online."
 featuredImage: "/subvert-the-algorithm.png"
-projectLink: "https://subvert-the-algorithm.com"
+projectLink: "https://algorithm-manifesto.netlify.app/"
 templateKey: project-page
 ---
 

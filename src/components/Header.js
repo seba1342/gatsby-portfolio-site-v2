@@ -2,152 +2,55 @@
 
 import React, { useContext, useState } from "react";
 import { Link } from "gatsby";
-import { AnimatePresence, motion } from "framer-motion";
+import { theme } from "../../tailwind.config";
 import { AppContext } from "~context/AppContext";
+import Logo from "~components/svg/Logo";
+import Menu from "~components/Menu";
+import NightModeSwitch from "~components/NightModeSwitch";
 
 const Header = () => {
   const appContext = useContext(AppContext);
   const [menuActive, setMenuActive] = useState(false);
 
-  if (!motion || !AnimatePresence) {
-    return null;
-  }
-
   return (
-    <>
-      <header className="header flex flex-row xs:justify-between justify-center items-center p-4 b1">
-        <Link
-          to="/"
-          className="header__brand no-underline mx-4 xs:mx-0"
-          onClick={() => setMenuActive(false)}
-        >
-          <h2
-            className="f3 font-bold animation-appear--from-top"
-            style={{ animationDelay: `50ms` }}
-          >
-            Seb Bailouni
-          </h2>
-        </Link>
-
-        {appContext.device === `mobile` ? (
-          <div>
+    <div className="w-full flex justify-center items-start top-0 sticky z-50">
+      <div
+        className={`header bg-dark-grey text-antique-white rounded-sm w-full relative ${
+          appContext.darkMode ? `dark-mode` : ``
+        } ${menuActive ? `menu-active` : ``}`}
+      >
+        <header className="flex flex-col items-center p-3 b1 z-10">
+          <div className="w-full relative flex flex-row items-center justify-between">
             <button
-              className="mx-4 animation-appear--from-top f3 pr-2"
-              onClick={() => appContext.toggleDarkMode()}
-              style={{ animationDelay: `100ms` }}
+              className="header__hamburger w-4 h-3 flex flex-col"
+              onClick={() => {
+                setMenuActive(!menuActive);
+              }}
               type="button"
             >
-              {appContext.darkMode ? `☀️` : `🌚`}
+              <div className="header__hamburger--line header__hamburger--line--1" />
+              <div className="header__hamburger--line header__hamburger--line--2" />
             </button>
-
-            <button
-              className="header__hamburger hamburger--spin animation-appear--from-top"
-              onClick={() => setMenuActive(!menuActive)}
-              style={{ animationDelay: `150ms` }}
-              type="button"
-            >
-              <span
-                className={`header__hamburger__box ${
-                  appContext.darkMode ? `dark-mode` : ``
-                }`}
-              >
-                <span className="header__hamburger__inner"></span>
-              </span>
-            </button>
-          </div>
-        ) : (
-          <div className={`header__links flex flex-row ${menuActive}`}>
             <Link
               to="/"
-              className="header__link mx-4"
-              activeClassName="header__link--active"
+              className="header__brand no-underline mx-4 xs:mx-0"
+              onClick={() => setMenuActive(false)}
             >
-              <div
-                className="animation-appear--from-top"
-                style={{ animationDelay: `100ms` }}
-              >
-                /home
-              </div>
+              <Logo
+                className="ml-8"
+                color={
+                  appContext.darkMode
+                    ? theme.colors[`dark-grey`]
+                    : theme.colors[`antique-white`]
+                }
+              />
             </Link>
-
-            <Link
-              to="/projects"
-              className="header__link mx-4"
-              activeClassName="header__link--active"
-            >
-              <div
-                className="animation-appear--from-top"
-                style={{ animationDelay: `200ms` }}
-              >
-                /projects
-              </div>
-            </Link>
-
-            <Link
-              to="/inspiration"
-              className="header__link mx-4"
-              activeClassName="header__link--active"
-            >
-              <div
-                className="animation-appear--from-top"
-                style={{ animationDelay: `200ms` }}
-              >
-                /inspo
-              </div>
-            </Link>
-
-            <button
-              className="mx-4 animation-appear--from-top b1"
-              onClick={() => appContext.toggleDarkMode()}
-              style={{ animationDelay: `300ms` }}
-              type="button"
-            >
-              {appContext.darkMode ? `☀️` : `🌚`}
-            </button>
+            <NightModeSwitch />
           </div>
-        )}
-      </header>
-
-      {appContext.device === `mobile` && (
-        <AnimatePresence>
-          {menuActive && (
-            <motion.div
-              className="header__links flex flex-col justify-between f2"
-              animate={{ height: 125, opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Link
-                to="/"
-                className="header__link mx-4"
-                activeClassName="header__link--active"
-                onClick={() => setMenuActive(false)}
-              >
-                /home
-              </Link>
-
-              <Link
-                to="/projects"
-                className="header__link mx-4"
-                activeClassName="header__link--active"
-                onClick={() => setMenuActive(false)}
-              >
-                /projects
-              </Link>
-
-              <Link
-                to="/inspiration"
-                className="header__link mx-4"
-                activeClassName="header__link--active"
-                onClick={() => setMenuActive(false)}
-              >
-                /inspo
-              </Link>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      )}
-    </>
+        </header>
+        <Menu active={menuActive} setActive={setMenuActive} />
+      </div>
+    </div>
   );
 };
 

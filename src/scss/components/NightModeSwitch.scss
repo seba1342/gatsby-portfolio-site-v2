@@ -1,0 +1,31 @@
+.night-mode-switch {
+  cursor: pointer;
+
+  &__circle {
+    transition: $default-transition all;
+
+    height: 20px;
+    left: 2px;
+    top: 2px;
+    width: 20px;
+  }
+
+  &__container {
+    transition: $default-transition all;
+
+    background-color: theme("colors.antique-white");
+    border-radius: 24px;
+    height: 24px;
+    width: 50px;
+  }
+
+  .dark-mode {
+    &.night-mode-switch__container {
+      background-color: theme("colors.dark-grey");
+    }
+
+    .night-mode-switch__circle {
+      background-color: theme("colors.antique-white");
+    }
+  }
+}

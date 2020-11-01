@@ -5,7 +5,7 @@ title: "selfhelpbooks.club"
 tags: ["js", "netlify", "react", "gatsby", "design"]
 excerpt: "A carefully curated collection of self help books where people can find something new and interesting to read."
 featuredImage: "/selfhelpbooks-club.png"
-projectLink: "https://selfhelpbooks.club"
+projectLink: "https://selfhelpbookclub.netlify.app/"
 templateKey: project-page
 ---
 
