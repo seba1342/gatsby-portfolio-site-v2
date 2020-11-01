@@ -1,6 +1,9 @@
 /* eslint-disable react/prop-types */
 import React, { useContext, useState } from "react";
 import { AppContext } from "~context/AppContext";
+import Moon from "~components/svg/Moon";
+import Sun from "~components/svg/Sun";
+import { theme } from "../../tailwind.config";
 
 export default function Switch() {
   const appContext = useContext(AppContext);
@@ -30,14 +33,25 @@ export default function Switch() {
         type="checkbox"
       />
       <div
-        className={`night-mode-switch__container relative ${
+        className={`night-mode-switch__container relative flex flex-row justify-between items-center ${
           appContext.darkMode ? `dark-mode` : ``
         }`}
       >
         <div
           className="night-mode-switch__circle bg-dark-grey rounded-full absolute"
-          style={{ transform: checked ? `translateX(26px)` : `translateX(0)` }}
-        ></div>
+          style={{ transform: checked ? `translateX(23px)` : `translateX(0)` }}
+        />
+        <div
+          style={{
+            transform: checked ? `translateX(6px)` : `translateX(30px)`
+          }}
+        >
+          {checked ? (
+            <Sun color={theme.colors[`antique-white`]} />
+          ) : (
+            <Moon color={theme.colors[`dark-grey`]} />
+          )}
+        </div>
       </div>
     </label>
   );

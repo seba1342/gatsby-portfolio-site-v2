@@ -22,7 +22,7 @@ const Header = () => {
         <header className="flex flex-col items-center p-3 b1 z-10">
           <div className="w-full relative flex flex-row items-center justify-between">
             <button
-              className="header__hamburger w-4 h-3 flex flex-col"
+              className="header__hamburger w-4 h-3 flex flex-col z-20"
               onClick={() => {
                 setMenuActive(!menuActive);
               }}

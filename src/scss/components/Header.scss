@@ -10,7 +10,7 @@
     &--line {
       transition: $default-transition transform;
 
-      width: 100%;
+      width: 24px;
       height: 3px;
       background-color: theme("colors.antique-white");
       transform: rotate(0);
