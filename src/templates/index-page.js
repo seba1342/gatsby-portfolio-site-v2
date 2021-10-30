@@ -23,7 +23,7 @@ class IndexPageComponent extends Component {
         <Layout className="index-page w-full relative m-auto mb-16">
           <section className="index-page__content b1">
             <p className="animation-appear" style={{ animationDelay: `100ms` }}>
-              Hey{" "}
+              Hey{` `}
               <span role="img" aria-label="Sunglasses Emoji Face">
                 😎
               </span>
@@ -33,25 +33,36 @@ class IndexPageComponent extends Component {
               Melbourne.
             </p>
             <p className="animation-appear" style={{ animationDelay: `300ms` }}>
-              I currently work as a Developer for{" "}
+              I currently work as a Software Engineer for{` `}
               <a
                 href="https://www.ferocia.com.au/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Ferocia
-              </a>{" "}
-              where I work on Bendigo Bank&apos;s online banking platform.
+              </a>
+              {` `}
+              where I am building{` `}
+              <a
+                href="https://up.com.au/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Up Bank
+              </a>
+              {` `}
+              with an amazing team of people.
             </p>
             <p className="animation-appear" style={{ animationDelay: `300ms` }}>
-              I have also worked as a Junior Developer for{" "}
+              I have also worked as a Junior Developer for{` `}
               <a
                 href="https://loveandmoney.agency"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Love + Money Agency
-              </a>{" "}
+              </a>
+              {` `}
               where I added a little bit to the internet everyday.
             </p>
             <p className="animation-appear" style={{ animationDelay: `400ms` }}>
@@ -59,7 +70,7 @@ class IndexPageComponent extends Component {
               and science.
             </p>
             <p className="animation-appear" style={{ animationDelay: `500ms` }}>
-              In my free time I enjoy playing{" "}
+              In my free time I enjoy playing{` `}
               <a
                 href="https://twitter.com/kartklips"
                 target="_blank"
@@ -71,7 +82,7 @@ class IndexPageComponent extends Component {
               cooking shows on Netflix.
             </p>
             <p className="animation-appear" style={{ animationDelay: `600ms` }}>
-              You can find me on{" "}
+              You can find me on{` `}
               <a
                 href="https://instagram.com/sebastien.bailouni"
                 target="_blank"
@@ -79,7 +90,7 @@ class IndexPageComponent extends Component {
               >
                 Instagram
               </a>
-              ,{" "}
+              ,{` `}
               <a
                 href="https://www.linkedin.com/in/sebastien-bailouni-956002123/"
                 target="_blank"
@@ -87,7 +98,7 @@ class IndexPageComponent extends Component {
               >
                 LinkedIn
               </a>
-              ,{" "}
+              ,{` `}
               <a
                 href="https://www.twitter.com/seba1342"
                 target="_blank"
@@ -95,7 +106,7 @@ class IndexPageComponent extends Component {
               >
                 Twitter
               </a>
-              , and{" "}
+              , and{` `}
               <a
                 href="https://www.strava.com/athletes/35219560"
                 target="_blank"
@@ -103,14 +114,15 @@ class IndexPageComponent extends Component {
               >
                 Strava
               </a>
-              , or reach me via{" "}
+              , or reach me via{` `}
               <a href="mailto:sbailouni@gmail.com">sbailouni@gmail.com</a>.
             </p>
             <p className="animation-appear" style={{ animationDelay: `700ms` }}>
-              Head to my{" "}
+              Head to my{` `}
               <Link to="/projects" className="link">
                 projects
-              </Link>{" "}
+              </Link>
+              {` `}
               page to see some of my work.
             </p>
           </section>
@@ -126,7 +138,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <AppContext.Consumer>
-      {(appContext) => (
+      {appContext => (
         <IndexPageComponent
           appContext={appContext}
           frontmatter={frontmatter}
