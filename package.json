@@ -14,7 +14,7 @@
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
     "@reach/router": "^1.2.1",
-    "aws-sdk": "^2.550.0",
+    "aws-sdk": "^2.814.0",
     "axios": "^0.19.2",
     "body-scroll-lock": "^2.6.1",
     "core-js": "2.6.8",
